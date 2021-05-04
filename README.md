@@ -101,7 +101,7 @@ else:
 
 **Details** : This function will give you the details about all camera connected to the device.
 
-**Returns** : A python dictionary where `"data"` key contains a list that holds the data about cameras.
+**Returns** : A python dictionary where `data` key contains a list that holds the data about cameras.
 
 ### `get_camera_photo` 
 **Syntax** : `get_camera_photo(filename:str,camera_id:int=0)`
@@ -109,3 +109,37 @@ else:
 **Details** : Access camera with id `camera_id` and captures a photo using it then saves it with name `filename`
 
 **Returns** : A python dictionary that contains a `success` key with value `True` or `False`. That indicates if the operation was successful or not.
+
+### `get_clipboard`
+**Syntax** : `get_clipboard()`
+
+**Details** : Tries to get whatever is in the clipboard of that device now.
+
+**Returns** : A python dictionary that contains a key named `text` with the clipboard content.
+
+The following code will print whatever in the clipboard is
+```python
+from termux import *
+clipboard=get_clipboard()
+if clipboard["success"]:
+    print(clipboard["text"])
+else:
+    print("Something went wrong.")
+```
+
+### `set_clipboard`
+**Syntax** : `set_clipboard(text:str)`
+
+**Details** : Sets the string `text` to the clipboard.
+
+**Returns** : A python dictionary that contains `success` key set to `True` if the operation was successful otherwise it is set to `False`
+
+The following code will set the clipboard to the input string that you will give.
+```python
+from termux import *
+stat=set_clipboard(str(input(">>")))
+if stat["success"]:
+    print("Clipboard updated successfully")
+else:
+    print("Something went wrong.")
+```
