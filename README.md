@@ -8,6 +8,7 @@ If you don't know about Termux:API, visit [TermuxWiki](https://wiki.termux.com/w
 In order to install this package you have to just run one command and you will be good to go.
 
 Install via `pip`
+> Maybe Unavailable Now.
 ```console
 python3 -m pip install termux_api
 ```
