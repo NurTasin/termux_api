@@ -23,6 +23,7 @@ python3 setup.py install
 ## API Functions
 This package contains following functions. 
 > To know more click on them
+
 - [`is_api_installed`](#is_api_installed)
 - [`install_api`](#install_api)
 - [`get_battery_status`](#get_battery_status)
