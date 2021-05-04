@@ -144,3 +144,44 @@ if stat["success"]:
 else:
     print("Something went wrong.")
 ```
+
+### `get_contact_list`
+**Syntax** : `get_contact_list()`
+
+**Details** : Tries to return all the contacts available on the device 
+
+**Returns** : A python dictionary that contains a key `data` that contains a list of dictionaries with name and phone number
+
+The following code will print the phone number of a contact name given by the user.
+```python
+from termux import *
+res = get_contact_list()
+if res["success"]:
+    name=str("Contact Name: ")
+    for i in res["data"]:
+        if i["name"]==name:
+            print("Phone Number: ",i["number"])
+            exit(0)
+    print(name," was not found in the contact list.")
+else:
+    print("Something went wrong.")
+```
+
+### `get_location`
+**Syntax** : `get_location(provider:str="gps",req_type:str="once")`
+
+**Data** : Tries to get the current location on earth and return that.
+
+**Note** : The variable `provider` must be either `gps` or `network` and `req_type` must be either `once` , `update` or `last`
+
+**Returns** : A python dictionary that has key `latitude`,`longitude`,`altitude`,`accuracy`,etc for latitude,longitude,altitude and accuracy respectively.
+
+The following code will print the latitude and longitude of the devices current location.
+```python
+from termux import *
+location=get_location("gps","once")
+if location["success"]:
+    print(location["latitude"],location["longitude"])
+else:
+    print("Something went wrong.")
+```
