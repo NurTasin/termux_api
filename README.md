@@ -65,3 +65,33 @@ Above functions will be found here documented.
 
 ### `is_api_installed`
 **Syntax** : `is_api_installed()`
+
+**Details** : Checks if Termux:API is installed or not.
+
+**Returns** : `True` if Termux:API is properly installed. Otherwise it returns `False`
+
+### `install_api`
+**Syntax** : `install_api()`
+
+**Details** : Tries to install the Termux:API cli tools.
+
+**Returns** : `True` if installed successfully. Otherwise it prints the error and returns `False`
+
+### `get_battery_status`
+**Syntax** : `get_battery_status()`
+
+**Details** : This function allows you to get the details about the device's battery.
+
+**Returns** : A python dictionary that contains the detail.
+
+> This function may not work on all device dew to Google's restriction
+
+The following code will print the percentage of the battery.
+```python
+from termux import *
+bat_status=get_battery_status()
+if bat_status["success"]:
+    print("Percentage: ",bat_status["percentage"])
+else:
+    print("Something went wrong.")
+```
