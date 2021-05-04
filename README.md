@@ -64,4 +64,4 @@ Above functions will be found here documented.
 
 
 ### `is_api_installed`
-** Syntax ** : `is_api_installed()`
+**Syntax** : `is_api_installed()`
