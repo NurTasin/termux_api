@@ -58,3 +58,10 @@ This package contains following functions.
 - [`get_call_log`](#get_call_log)
 - [`biometric_auth`](#biometric_auth)
 - [`transmit_ir`](#transmit_ir)
+
+## Function Details (Documentation)
+Above functions will be found here documented.
+
+
+### `is_api_installed`
+** Syntax ** : `is_api_installed()`
