@@ -75,7 +75,7 @@ def get_camera_info() -> dict:
     if not rc==0:
         return {'success':False,"error":err}
     
-    jsonobj=loads(obj)
+    jsonobj={"data":loads(obj)}
     jsonobj["success"]=True
     return jsonobj
 

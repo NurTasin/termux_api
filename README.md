@@ -59,6 +59,8 @@ This package contains following functions.
 - [`biometric_auth`](#biometric_auth)
 - [`transmit_ir`](#transmit_ir)
 
+> Some functions may not work due to the Google's Restriction
+
 ## Function Details (Documentation)
 Above functions will be found here documented.
 
@@ -84,8 +86,6 @@ Above functions will be found here documented.
 
 **Returns** : A python dictionary that contains the detail.
 
-> This function may not work on all device dew to Google's restriction
-
 The following code will print the percentage of the battery.
 ```python
 from termux import *
@@ -95,3 +95,17 @@ if bat_status["success"]:
 else:
     print("Something went wrong.")
 ```
+
+### `get_camera_info`
+**Syntax** : `get_camera_info()`
+
+**Details** : This function will give you the details about all camera connected to the device.
+
+**Returns** : A python dictionary where `"data"` key contains a list that holds the data about cameras.
+
+### `get_camera_photo` 
+**Syntax** : `get_camera_photo(filename:str,camera_id:int=0)`
+
+**Details** : Access camera with id `camera_id` and captures a photo using it then saves it with name `filename`
+
+**Returns** : A python dictionary that contains a `success` key with value `True` or `False`. That indicates if the operation was successful or not.
